@@ -24,7 +24,7 @@ class ContactBox:
                 self.contacts.remove(con)
                 return print("Contact successfully deleted")
             else:
-                return print("Contact not found ")
+                return print("Contact not found")
 
     def search_contact(self, name=''):
         name = input('Enter name to search: ')
@@ -50,7 +50,7 @@ def logic():
     while True:
         new_contact = ContactBox()
 
-        option = int(input('Enter 1 to add, 2 to search and 3 to delete: '))
+        option = int(input('Enter 1 to add, 2 to delete and 3 to search and 4 to show contacts: '))
 
         if option == 1:
             contact = Contact()
@@ -61,6 +61,5 @@ def logic():
             new_contact.search_contact()
         elif option == 4:
             new_contact.show_contact()
-
 
 logic()
