@@ -7,7 +7,7 @@ class Contact:
         self.postal_address = postal_address
 
     def new_contact(self):
-        print('Name: "{}"  Phone Number: "{}" Gender: "{}" Email: "{}" Address:"{}"'.format(self.name, self.phone, self.gender, self.email, self.postal_address))
+        print('Name is: "{}"  Phone Number is: "{}" Gender is: "{}" Email is: "{}" Address is:"{}"'.format(self.name, self.phone, self.gender, self.email, self.postal_address))
 
 name = input("Enter name: ")
 phone = input("Enter Phone: ")
@@ -16,3 +16,4 @@ email = input("Enter Email: ")
 postal_address = input("Enter Postal Address: ")
 my_contact = Contact(name, phone, gender, email, postal_address)
 my_contact.new_contact()
+
