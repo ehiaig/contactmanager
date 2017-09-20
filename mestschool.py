@@ -47,24 +47,25 @@ class EITs:
         print("Recite fun fact")
 
 
-    def read_eit(self):
+    def print_eit(self):
         with open('eits.csv', 'r') as file:
             countries = ['Ghana', 'Nigeria', 'Kenya', 'South Africa', 'Ivory Coast']
             for con in file:
-                # if con.nationality in countries:
-                #     print(con)
-                # else:
-                #     return "Country not found"
-                print(con)
-    def write_eit(self):
-        file_exist = os.path.isfile('eits.csv')
-        with open('eits.csv', 'a') as my_file:
-            fieldnames = ['name', 'nationality']
-            writer = csv.DictWriter(my_file, fieldnames=fieldnames)
+                if con(self.nationality) in countries:
+                    print(con)
+                else:
+                    return "Country not found"
+                # print(con)
 
-            if not file_exist:
-                writer.writeheader()
-            writer.writerow({'name': self.name, 'nationality': self.nationality})
+    # def add_eit(self):
+    #     file_exist = os.path.isfile('eits.csv')
+    #     with open('eits.csv', 'a') as my_file:
+    #         fieldnames = ['name', 'nationality']
+    #         writer = csv.DictWriter(my_file, fieldnames=fieldnames)
+    #
+    #         if not file_exist:
+    #             writer.writeheader()
+    #         writer.writerow({'name': self.name, 'nationality': self.nationality})
 
 class Fellows:
     def __init__(self, name, nationality, happiness_level):
@@ -93,6 +94,6 @@ name = input("Enter name:")
 nationality = input("Enter Country:")
 happiness_level = 0
 my_eit = EITs(name, nationality)
-my_eit.write_eit()
-my_eit.read_eit()
+# my_eit.add_eit()
+my_eit.print_eit()
 
