@@ -9,9 +9,27 @@
     - Press 3 to search
 - If user press 1, bring up the delete function
 """
+import csv
+import os.path
+
 class ContactBox:
     def __init__(self, contacts=[]):
         self.contacts = contacts
+
+    def read_contact(self):
+        with open('contacts.csv', 'r') as file:
+            for con in file:
+                print(con) #This reads from the file
+
+    def create_csv(self, contact):
+        file_exist = os.path.isfile('contacts.csv')
+        with open('contacts.csv', 'a') as my_file:
+            fieldnames = ['name', 'phone', 'email', 'address', 'gender']
+            writer = csv.DictWriter(my_file, fieldnames=fieldnames)
+
+            if not file_exist:
+                writer.writeheader()
+            writer.writerow({'name':contact.name, 'phone':contact.phone, 'email':contact.email, 'address':contact.postal_address, 'gender':contact.gender})
 
     def add_contact(self, contact):
         self.contacts.append(contact)
@@ -49,22 +67,18 @@ class Contact:
 def logic():
     while True:
         new_contact = ContactBox()
-
         option = int(input('Enter 1 to add, 2 to delete and 3 to search and 4 to show contacts: '))
 
         if option == 1:
             contact = Contact()
             new_contact.add_contact(contact)
+            new_contact.create_csv(contact)
         elif option == 2:
             new_contact.remove_contact()
         elif option == 3:
             new_contact.search_contact()
         elif option == 4:
             new_contact.show_contact()
+            new_contact.read_contact()
 
 logic()
-
-"""
-- Save some contacts in a file
-- Upon restart of the program, it should read contacts from the file. 
-"""
