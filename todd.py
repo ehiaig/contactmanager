@@ -12,19 +12,20 @@ class Mest:
         self.name = name
         self.country = country
 
-        Mest.fellows_created += 1
-
-    def add_fellow(self):
-        if Mest.fellows_created < 5:
-            print("There are in the list")
+        if Mest.fellows_created < 4:
+            Mest.fellows_created += 1
         else:
-            print("We cannot afford to hire {} from {}".format(self.name, self.country))
-            #raise Exception ("We cannot afford to hire {} from {}".format(self.name, self.country))
+            print("Exception: We cannot afford to hire {} from {}".format(self.name, self.country))
+            # raise Exception ("We cannot afford to hire {} from {}".format(self.name, self.country))
 
 
 my_mest = Mest("Pascal", "Congo")
 my_mest = Mest("Francis", "Ghana")
 my_mest = Mest("Andrew", "PHP")
+my_mest = Mest("Edem", "Ghana")
+my_mest = Mest("Tomi", "Nig")
+my_mest = Mest("Francis", "Ghana")
+
 my_mest = Mest("Miishe", "Ghana")
+print(Mest.fellows_created)
 my_mest = Mest("Simi", "Ghana")
-my_mest.add_fellow()
