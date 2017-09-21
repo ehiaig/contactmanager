@@ -18,7 +18,8 @@ class Mest:
         if Mest.fellows_created < 5:
             print("There are in the list")
         else:
-            raise Exception ("We cannot afford to hire {} from {}".format(self.name, self.country))
+            print("We cannot afford to hire {} from {}".format(self.name, self.country))
+            #raise Exception ("We cannot afford to hire {} from {}".format(self.name, self.country))
 
 
 my_mest = Mest("Pascal", "Congo")
