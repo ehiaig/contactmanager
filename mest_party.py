@@ -10,18 +10,15 @@ unwelcome to future events.
 """
 class MestParty:
     def __init__(self, name, email):
-        # name = input('Enter your name:')
-        # email = input('Enter your email:')
         self.name = name
         self.email = email
-
         dicti[name] = email
+
         print("****Guest added to the list****")
-        print (dicti)
+        # print (dicti)
 
     def search_name(self, na):
         print('====== search for name =======')
-        print (dicti)
         if na in dicti.keys():
             return dicti[na]
         else:
@@ -31,19 +28,28 @@ class MestParty:
         sender = "ehiagheaigg@gmail.com"
         receiver = dicti[name]
         # receiver = ['div82340@posdz.com']
-        message = """Thank you for showing up at the party today."""
+        even_msg = """Thank you for showing up at the party today."""
+        odd_msg = """Don\'t ever show up here again."""
 
-        try:
-            mailObj = smtplib.SMTP("smtp.gmail.com", 587)
-            mailObj.starttls()
-            mailObj.login('ehiagheaigg@gmail.com', 'hjjhj')
-            mailObj.sendmail(sender, receiver, message)
-            print("Mail sent")
-        except Exception as e:
-            print ("Error: unable to send email", e)
-
-    def unwelcome(self):
-        pass
+        for e in dicti.keys():
+            if len(e) % 2 != 0:
+                try:
+                    mailObj = smtplib.SMTP("smtp.gmail.com", 587)
+                    mailObj.starttls()
+                    mailObj.login('ehiagheaigg@gmail.com', 'hjjhj')
+                    mailObj.sendmail(sender, receiver, odd_msg)
+                    print("Mail has been sent")
+                except Exception as e:
+                    print("Error: unable to send email", e)
+            else:
+                try:
+                    mailObj = smtplib.SMTP("smtp.gmail.com", 587)
+                    mailObj.starttls()
+                    mailObj.login('ehiagheaigg@gmail.com', 'hjjhj')
+                    mailObj.sendmail(sender, receiver, even_msg)
+                    print("Mail has been sent")
+                except Exception as e:
+                    print("Error: unable to send email", e)
 
 def logic():
     while True:
@@ -57,11 +63,4 @@ def logic():
             print(party.search_name(name))
         elif choice == 3:
             party.send_email(name)
-        elif choice == 4:
-            party.unwelcome()
-
 logic()
-
-# party = MestParty()
-# party.add_guest()
-# party.send_email()

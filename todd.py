@@ -3,8 +3,6 @@ Mr. Todd has bought Andrew a new weave, so now MEST is on a hiring freeze. We ca
 Use a static field to keep track of how many Fellows have been created
 If  a user tries to construct a fifth Fellow, raise an exception
 """
-# class Fellow:
-
 class Mest:
     fellows_created = 0
 
@@ -22,7 +20,7 @@ class Mest:
 my_mest = Mest("Pascal", "Congo")
 my_mest = Mest("Francis", "Ghana")
 my_mest = Mest("Andrew", "PHP")
-# my_mest = Mest("Edem", "Ghana")
+my_mest = Mest("Edem", "Ghana")
 # my_mest = Mest("Tomi", "Nig")
 # my_mest = Mest("Francis", "Ghana")
 # my_mest = Mest("Miishe", "Ghana")
