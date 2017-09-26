@@ -24,7 +24,7 @@ class MarkerBox:
         for col in self.markers:
             print(col.color)
 
-if __name__ == "__main__":
+if __name__ == "__main__": #The code below this line is the first to be called when this program runs. So it makes it easy in a case where your program is going to imported as a module.
     mest_markers = MarkerBox()
     mest_markers.add_marker(Marker(color="blue"))
     mest_markers.add_marker(Marker(color="black"))

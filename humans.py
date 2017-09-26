@@ -3,7 +3,7 @@ class Person:
         if (name == "Francis"):
             raise ValueError("What kind of parents would name their child Francis?")
         else:
-            self.__name = name
+            self.__name = name #this implies that the variable name is private
             self.__gender = gender
 
     def __repr__(self): #the double undescore means that this method is private so cannot be changed.

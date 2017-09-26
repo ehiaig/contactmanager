@@ -18,12 +18,13 @@ class Mest:
         else:
             print("{} from {} has been added to the list".format(self.name, self.country))
 
+
 my_mest = Mest("Pascal", "Congo")
 my_mest = Mest("Francis", "Ghana")
 my_mest = Mest("Andrew", "PHP")
-my_mest = Mest("Edem", "Ghana")
-my_mest = Mest("Tomi", "Nig")
-my_mest = Mest("Francis", "Ghana")
-my_mest = Mest("Miishe", "Ghana")
-print(Mest.fellows_created)
-my_mest = Mest("Simi", "Ghana")
+# my_mest = Mest("Edem", "Ghana")
+# my_mest = Mest("Tomi", "Nig")
+# my_mest = Mest("Francis", "Ghana")
+# my_mest = Mest("Miishe", "Ghana")
+# print(Mest.fellows_created) #This prints the last value of fellows.created
+print(my_mest.__dict__) #This prints values of my_mest inside a dictionary
