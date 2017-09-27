@@ -1,7 +1,8 @@
 """
 There is a school bus that contains upto 1 driver and 10 students.
 The school bus can drive ONLY IF there are 10 students and 1 driver
-"""
+
+Solution:
 class SchoolBus:
 
     def __init__(self):
@@ -41,8 +42,42 @@ while quit:
         s.drive()
     elif request == '4':
         quit = False
+"""
 
 
+#Using Polymorphism, this can be achieved by:
+class Driver:
+    def __init__(self, name, liscense_check):
+        self.name = name
+        self.liscense_check = liscense_check
+
+class Student:
+    def __init__(self, name):
+        self.name = name
+
+class SchoolBus:
+    def __init__(self):
+        self.studentlist = []
+        self.driverlist = []
+
+    def add_student(self, stu):
+        self.studentlist.append(stu)
+
+    def add_driver(self, dri):
+        self.driverlist.append(dri)
+
+    def drive(self):
+        if len(self.studentlist) == 10 and len(self.driverlist)==1:
+            print('Drive on baby!')
+        else:
+            print('Number of passengers not allowed')
+
+if __name__ == '__main__':
+    sb = SchoolBus()
+    for _ in range(10):
+        sb.add_student(Student('Tom'))
+    sb.add_driver(Driver('Nana', True))
+    sb.drive()
 
 
 
