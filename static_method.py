@@ -16,14 +16,16 @@ class StringHelper:
 
 # print(StringHelper.scramble('Andrew'))
 
-"""
-Create a static method abreviate to do the following
+    def abbreviate(text, num):
+        if num < len(text):
+            print(text[0:num]+"...")
+        elif num == len(text):
+            print(""+str(text))
+
 StringHelper.abbreviate('Hello', 2)
->> he...
 StringHelper.abbreviate('I am late for class because I h8 tech', 9)
->> I am late.....
 StringHelper.abbreviate('moo', 3)
->> moo
-"""
+
+
 
 

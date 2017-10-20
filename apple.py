@@ -1,29 +1,27 @@
 class Apple:
-    num = 5
+    price = 5
+    
     def __init__(self, color):
         self.color = color
-        print ('A {} cedi {} Apple'.format(self.num, self.color))
-        # self.set_price += 1
+        self.price = Apple.price
+        print ('A {} cedi {} Apple'.format(self.price, self.color))
 
-    # @staticmethod
-    def set_price():
-        print('A {} cedi {} Apple'.format(num, self.color))
+    @classmethod
+    def set_price(cls, num):
+        cls.price = num
+        return cls.price
 
+    # The above classmethod block can also be written as a static method block below
+    @staticmethod
+    def sp(n):
+        Apple.price = n
+        return Apple.price
 
 first = Apple("red")
-# print(first)
-#Output: A 5 cedi red Apple
-
 second = Apple('blue')
-# print(second)
-# #Output: A 5 cedi blue Apple
-#
-Apple.set_price()
-third=Apple('red')
-# print(third)
-# #Output: A 6 cedi red Apple
-#
-# print(first)
-# #Output: A 5 cedi red Apple
-#
-#
+
+Apple.sp(6)
+third = Apple('red')
+
+Apple.set_price(6)
+t = Apple('pink')

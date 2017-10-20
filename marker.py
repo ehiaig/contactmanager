@@ -32,3 +32,17 @@ if __name__ == "__main__": #The code below this line is the first to be called w
     mest_markers.remove_marker("blue")
     mest_markers.counter()
 
+
+string = "Hello There"
+print(string[0:3])
+print(string[:2])
+
+a = range(1,10)
+print(a)
+
+def f():
+    global s
+    print(s)
+    s = 'Andrew andrew'
+    print(s)
+
